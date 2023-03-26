@@ -1,12 +1,8 @@
-export enum TopLevelCategory {
-  Courses,
-  Services,
-  Books,
-  Products,
-}
+import { TopLevelCategoryEnum } from '../enums/top-level-category.enum';
 
 export class TopPageModel {
-  firstCategory: TopLevelCategory;
+  _id: string;
+  firstCategory: TopLevelCategoryEnum;
   secondCategory: string;
   title: string;
   category: string;
