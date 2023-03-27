@@ -6,6 +6,13 @@
 $ npm install
 ```
 
+## Running the Database
+
+```bash
+# development
+$ npm run run:db
+```
+
 ## Running the app
 
 ```bash
