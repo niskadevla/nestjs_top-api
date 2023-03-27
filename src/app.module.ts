@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypegooseModule } from 'nestjs-typegoose';
 
-import { AuthModule } from './auth/auth.module';
-import { TopPageModule } from './top-page/top-page.module';
-import { ProductModule } from './product/product.module';
-import { ReviewModule } from './review/review.module';
+import { AuthModule } from './core/auth/auth.module';
+import { TopPageModule } from './core/top-page/top-page.module';
+import { ProductModule } from './core/product/product.module';
+import { ReviewModule } from './core/review/review.module';
 import { getMongoConfig } from '../configs/mongo.config';
 
 @Module({
