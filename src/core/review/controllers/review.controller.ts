@@ -1,4 +1,15 @@
-import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpException,
+  HttpStatus,
+  Param,
+  Post,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { DocumentType } from '@typegoose/typegoose/lib/types';
 
 import { CreateReviewDto } from '../dto/create-review.dto';
@@ -10,6 +21,7 @@ import { ErrorMessages } from '../constants/error-messages.consts';
 export class ReviewController {
   constructor(private readonly reviewService: ReviewService) {}
 
+  @UsePipes(new ValidationPipe())
   @Post('create')
   async create(@Body() dto: CreateReviewDto): Promise<DocumentType<ReviewModel>> {
     return this.reviewService.create(dto);
